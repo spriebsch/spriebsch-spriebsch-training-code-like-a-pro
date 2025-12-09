@@ -2,15 +2,15 @@
 
 class Restaurant1 implements Restaurant
 {
-    private SecretSauce $secretSauce;
+    private Sauce $sauce;
     private array $patties = [];
 
-    public function acceptSauceDelivery(SecretSauce $secretSauce): void
+    public function acceptSauceDelivery(Sauce $sauce): void
     {
-        $this->secretSauce = $secretSauce;
+        $this->sauce = $sauce;
     }
 
-    public function acceptPattyDelivery(Patty $patty): void
+    public function acceptPattyDelivery(MeatBasedPatty $patty): void
     {
         $this->patties[] = $patty;
     }
@@ -19,6 +19,6 @@ class Restaurant1 implements Restaurant
     {
         $patty = array_pop($this->patties);
 
-        return new Burger($patty, $this->secretSauce);
+        return new MeatBasedBurger($patty, $this->sauce);
     }
 }

@@ -1,3 +1,10 @@
 <?php declare(strict_types=1);
 
-class SpecialSauce extends SecretSauce {}
+final readonly class SpecialSauce implements Sauce {}
+
+class SaltedSpecialSauce implements Sauce
+{
+    public function __construct(private readonly SpecialSauce $sauce) {}
+}
+
+// Favor composition over inheritance

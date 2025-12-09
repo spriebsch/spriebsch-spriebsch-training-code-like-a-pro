@@ -2,9 +2,9 @@
 
 interface Restaurant
 {
-    public function acceptSauceDelivery(SecretSauce $secretSauce): void;
+    public function acceptSauceDelivery(Sauce $sauce): void;
 
-    public function acceptPattyDelivery(Patty $patty): void;
+    public function acceptPattyDelivery(MeatBasedPatty $patty): void;
 
     public function serve(): Burger;
 }

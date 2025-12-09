@@ -8,11 +8,15 @@ spl_autoload_register(
         if ($classes === null) {
             $classes = array(
                 'burger' => '/Burger.php',
+                'meatbasedburger' => '/MeatBasedBurger.php',
+                'meatbasedpatty' => '/MeatBasedPatty.php',
                 'patty' => '/Patty.php',
+                'plantbasedburger' => '/PlantBasedBurger.php',
                 'plantbasedpatty' => '/PlantBasedPatty.php',
                 'restaurant' => '/Restaurant.php',
                 'restaurant1' => '/Restaurant1.php',
                 'restaurant2' => '/Restaurant2.php',
+                'sauce' => '/Sauce.php',
                 'secretsauce' => '/SecretSauce.php',
                 'secretsaucefactory' => '/SecretSauceFactory.php',
                 'specialsauce' => '/SpecialSauce.php'

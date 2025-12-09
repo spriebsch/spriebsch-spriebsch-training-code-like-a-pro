@@ -11,8 +11,8 @@ $factory = new SecretSauceFactory();
 $secretSauce1 = $factory->make();
 $secretSauce2 = $factory->make();
 
-$patty1 = new Patty();
-$patty2 = new Patty();
+$patty1 = new MeatBasedPatty();
+$patty2 = new MeatBasedPatty();
 
 $restaurant1->acceptSauceDelivery($secretSauce1);
 $restaurant1->acceptPattyDelivery($patty1);

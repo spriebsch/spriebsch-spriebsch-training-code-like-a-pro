@@ -2,7 +2,7 @@
 
 class Restaurant2 implements Restaurant
 {
-    private SecretSauce $secretSauce;
+    private Sauce $sauce;
     private array $patties = [];
     private array $plantBasedPatties;
     private bool $plantBased = false;
@@ -12,12 +12,12 @@ class Restaurant2 implements Restaurant
         $this->makePatties();
     }
 
-    public function acceptSauceDelivery(SecretSauce $secretSauce): void
+    public function acceptSauceDelivery(Sauce $sauce): void
     {
-        $this->secretSauce = $secretSauce;
+        $this->sauce = $sauce;
     }
 
-    public function acceptPattyDelivery(Patty $patty): void
+    public function acceptPattyDelivery(MeatBasedPatty $patty): void
     {
         $this->patties[] = $patty;
     }
@@ -35,11 +35,11 @@ class Restaurant2 implements Restaurant
             $patty = array_pop($this->plantBasedPatties);
             $this->plantBased = false;
 
-            return new Burger($patty, $specialSauce);
+            return new PlantBasedBurger($patty, $specialSauce);
         } else {
             $patty = array_pop($this->patties);
 
-            return new Burger($patty, $this->secretSauce);
+            return new MeatBasedBurger($patty, $this->sauce);
         }
     }
 

@@ -1,3 +1,3 @@
 <?php declare(strict_types=1);
 
-class SecretSauce {}
+final readonly class SecretSauce implements Sauce {}
