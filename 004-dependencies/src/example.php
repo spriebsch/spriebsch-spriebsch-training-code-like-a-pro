@@ -12,10 +12,8 @@ $_SERVER['REQUEST_METHOD'] = 'GET';
 $_SERVER['REQUEST_URI'] = '/';
 $_GET['name'] = 'value';
 
-$app_state = 'critical';
-
 $service = new SomeService('example-service');
-$controller = new HeavyController($service, new PDO('sqlite::memory:'));
+$controller = new HeavyController('critical', $now, $service, new PDO('sqlite::memory:'));
 
 $result = $controller->handle();
 
